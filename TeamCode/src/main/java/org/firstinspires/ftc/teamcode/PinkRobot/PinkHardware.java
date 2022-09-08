@@ -85,7 +85,7 @@ public class PinkHardware {
         leftB_drive.setDirection(DcMotor.Direction.FORWARD);
 
         collect.setDirection(DcMotor.Direction.FORWARD);
-        conveyor.setDirection(DcMotor.Direction.FORWARD);
+        conveyor.setDirection(DcMotor.Direction.REVERSE);
         shoot1.setDirection(DcMotor.Direction.FORWARD);
         shoot2.setDirection(DcMotor.Direction.FORWARD);
 

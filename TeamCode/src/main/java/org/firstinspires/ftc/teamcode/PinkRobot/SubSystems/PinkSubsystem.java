@@ -61,7 +61,7 @@ public class PinkSubsystem {
         robot.wobble_arm.setPosition(wobble_arm_command);
         robot.wobble_grip.setPosition(wobble_grip_command);
         robot.top_gate.setPosition(top_gate_command);
-        robot.ring_blocker.setPosition(ring_blocker_command);
+//        robot.ring_blocker.setPosition(ring_blocker_command);
 
 //        robot.sweeper_left.setPosition(sweeper_left_command);
 //        robot.sweeper_right.setPosition(sweeper_right_command);

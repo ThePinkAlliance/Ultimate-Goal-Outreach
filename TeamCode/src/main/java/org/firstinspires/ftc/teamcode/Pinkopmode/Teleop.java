@@ -115,7 +115,7 @@ public class Teleop extends Controls {
         }
         //Shoot Commands, if bumper or right trigger is used spin up motors
         isShootingHigh = false;
-        if(gamepad2.right_bumper || (gamepad2.right_trigger >= 0.2)) {
+        if (gamepad2.right_bumper || (gamepad2.right_trigger >= 0.2)) {
 
             //Shoot by pd command passing current velocity and target velocity, shootPower is below, pass a power for the shooter motors to use
             isShootingHigh = true;
@@ -147,7 +147,6 @@ public class Teleop extends Controls {
             //Power shot code
         } else if (gamepad2.left_bumper && PinkSubsystem.robot.shoot2.getVelocity() > 1425 && PinkSubsystem.robot.shoot2.getVelocity() < 1600) {
             Conveyor.flap_open();
-            //Conveyor.top_gate_up();
             Conveyor.collect(.65);
             //start shooting if shootTemp = 1 from previous code
         } else if (shootTemp == 1) {
@@ -158,7 +157,7 @@ public class Teleop extends Controls {
             //if left bumper pressed, eject rings
         } else if(gamepad1.left_bumper) {           // ----- EJECT ALL RINGS FROM BOT
             Conveyor.flap_open();
-            Conveyor.top_gate_up();
+//            Conveyor.top_gate_up();
             Conveyor.eject();
             //if right bumper is pressed collect rings
         } else if (gamepad1.right_bumper) {         // ----- DRIVER COLLECTION OF RINGS
@@ -166,7 +165,7 @@ public class Teleop extends Controls {
             Conveyor.flap_close();
             Conveyor.top_gate_down();
             //stop conveyor if nothing is pressed
-        }else {
+        } else {
             if(!isShootingHigh) {
                 Conveyor.conveyor_stop();
                 Conveyor.flap_close();
@@ -177,7 +176,7 @@ public class Teleop extends Controls {
         }
 
         // Ring Blocker
-        if(gamepad2.dpad_down || shootTemp == 1)
+        if (gamepad2.dpad_down || shootTemp == 1)
         {
             Collector.ringblocker_down();
         } else {
@@ -186,7 +185,7 @@ public class Teleop extends Controls {
 
         //Wobble controls
         //Gamepad 2 X is grip, B is release, A is down, Y is up
-        if(gamepad2.x) {
+        if (gamepad2.x) {
             Wobble.wobble_grip();
         } else if (gamepad2.b) {
             Wobble.wobble_ungrip();
